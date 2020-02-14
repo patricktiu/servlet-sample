@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: servlet-sample
+  name: servlet-sample
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servlet-sample
+  template:
+    metadata:
+      labels:
+        app: servlet-sample
+    spec:
+      containers:
+        - image: docker.io/app-servlet-sample
+          imagePullPolicy: Always
+          name: servlet-sample
+          ports:
+            - containerPort: 9080
