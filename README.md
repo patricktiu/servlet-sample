@@ -1,11 +1,12 @@
-# Hello World
+# Servlet 3.0 Sample
 
-A simple `Hello World` application that demonstrate a basic pattern for deploying an application into Red Hat OpenShift with IBM Cloud Pack for Application 4.0.1
+A WebSphere Application Server V8.5 sample demonstrates some Servlet 3.0 functionality and
+a basic pattern for deploying an application into Red Hat OpenShift with IBM Cloud Pack for Application.
 
 *Note:*
-*For IBM CLoud Pack for Application 4.0.0, we need to update the openship-pipeline-operator to v0.8.0*
+*For IBM Cloud Pack for Application v4.0.0, we need to openship-pipeline-operator:0.8.0*
 
-## Project structure
+## Project Directory Structure
 ```
 .
 |____Dockerfile

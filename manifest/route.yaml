@@ -6,7 +6,7 @@ metadata:
   name: servlet-sample
 spec:
   path:
-    "SampleProgrammatic"
+    "/SampleProgrammatic"
   port:
     targetPort: http
   to:
