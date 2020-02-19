@@ -25,7 +25,7 @@
 Dockerfile adds three things to build application image
 1. application EAR file
 2. application installation script (Jython)
-3. Daserver configuration scripot (Jython)
+3. server configuration script (Jython)
 
 ## Test locally 
 - make sute the db2 container is running in host 9.21.109.27
