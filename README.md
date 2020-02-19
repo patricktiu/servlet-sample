@@ -1,10 +1,4 @@
-# Servlet 3.0 Sample
-
-A WebSphere Application Server V8.5 sample demonstrates some Servlet 3.0 functionality and
-a basic pattern for deploying an application into Red Hat OpenShift with IBM Cloud Pack for Application.
-
-*Note:*
-*For IBM Cloud Pack for Application v4.0.0, we need to openship-pipeline-operator:0.8.0*
+# Database Sample
 
 ## Project Directory Structure
 ```
@@ -18,19 +12,30 @@ a basic pattern for deploying an application into Red Hat OpenShift with IBM Clo
 |____pipeline.yaml
 |____assets
 | |____app
-| | |____WebcontainerSample.ear
+| | |____DB2App-1_war.ear
 | |____config
-| | |____was-config.props
 | | |____install_app.py
+| | |____DB2App-1_war.ear_DB2App-1_war.ear_wsadmin.py
 | |____lib
 | | |____.keep
+| | |____db2jcc4.jar
 ```
 
 ## Building the application image
 Dockerfile adds three things to build application image
 1. application EAR file
 2. application installation script (Jython)
-3. sample properties file that increases container thread pool to 100
+3. Daserver configuration scripot (Jython)
+
+## Test locally 
+- make sute the db2 container is running in host 9.21.109.27
+- docker build . -t twas-server
+- docker run --name appserver90 --detach -p 9043:9043 -p 9443:9443  twas-server
+- open https://localhost:9443/db2/hello
+- open https://localhost:9443/db2/db
+- open https://localhost:9043/ibm/console 
+- docker exec  appserver90 cat /tmp/passwordupdated
+- docker stop appserver90
 
 ## Create a custom Tekton pipeline to build and deploy the application image
 

@@ -8,6 +8,8 @@ spec:
   params:
     - name: url
       value: https://github.com/patricktiu/servlet-sample
+    - name: revision
+      value: db-app
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
