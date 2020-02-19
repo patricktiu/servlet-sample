@@ -1,3 +1,4 @@
+---
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -6,10 +7,26 @@ metadata:
   name: servlet-sample
 spec:
   path:
-    "/db2/hello"
+    "/db2"
   port:
     targetPort: http
   to:
     kind: Service
     name: servlet-sample
+    weight: 100
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: servlet-sample
+  name: admin-console
+spec:
+  path:
+    "/ibm/console"
+  port:
+    targetPort: https
+  to:
+    kind: Service
+    name: admin-console
     weight: 100
