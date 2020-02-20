@@ -58,3 +58,9 @@ Dockerfile adds three things to build application image
 
 10. Congratulations! You've successfully deployed your tWAS application to OCP 4.x.
 
+## Testing
+
+- open http://{application-route}/db2/hello
+   
+- open http://{application-route}/db2/db
+  - need to start db2 container in another node
